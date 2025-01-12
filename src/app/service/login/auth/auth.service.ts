@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, throwError } from 'rxjs';
-import { CommonResponse } from 'src/app/model/commonResponse/CommonResponse';
-import { environment } from 'src/environments/environment';
+import { CommonResponse } from '../../../model/commonResponse/CommonResponse';
+import { environment } from '../../../../environments/environment';
 import { UserRequestDTO } from '../../../model/user/UserRequestDTO';
 
 @Injectable({
@@ -29,6 +29,14 @@ export class AuthService {
         return this.handleError(error);
       })
     );
+  }
+
+  isAuthenticated(): string | any {
+    return sessionStorage.getItem('authStatus');
+  }
+
+  setAuthenticationStatus(authStatus: string) {
+    sessionStorage.setItem('authStatus', authStatus);
   }
 
   /**
