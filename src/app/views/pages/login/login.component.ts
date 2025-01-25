@@ -40,7 +40,6 @@ import { AuthStatus } from '../../../enums/AuthStatus';
     RowComponent,
     ColComponent,
     CardGroupComponent,
-    TextColorDirective,
     CardComponent,
     CardBodyComponent,
     FormDirective,

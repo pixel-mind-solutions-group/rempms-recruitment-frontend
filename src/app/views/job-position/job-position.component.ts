@@ -15,7 +15,7 @@ import { selectJobPositionSavedResponse } from './store/job-position.selector';
 import { Store, select } from '@ngrx/store';
 import Swal from 'sweetalert2';
 import { Industry } from '../../model/industry/Industry';
-import { HandleErrors } from 'src/app/model/errors/handle-errors';
+import { HandleErrors } from '../../model/errors/handle-errors';
 
 @Component({
   selector: 'app-job-position',
@@ -36,7 +36,7 @@ export class JobPositionComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private store: Store<{ jobPosition: JobPositionState }>
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.jobPositionForm = this.formBuilder.group({
