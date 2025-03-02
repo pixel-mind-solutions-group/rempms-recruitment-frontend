@@ -10,7 +10,10 @@ import { EmployerElement } from '../../enums/elements/EmployerElement';
 export class EmployerVisibilityToggle implements OnInit {
   @Input('employerVisibilityToggle') visibilityId: string | undefined;
 
-  constructor(private element: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private element: ElementRef,
+    private renderer: Renderer2,
+  ) {}
 
   ngOnInit(): void {
     console.log('EmployerVisibilityToggle directive initialized');
@@ -21,17 +24,17 @@ export class EmployerVisibilityToggle implements OnInit {
 
     const userRoleHasModule =
       parsedSessionUserData.userHasApplicationScopeHasUserRole.userRole.userRoleHasModules.find(
-        (rhm) => rhm.moduleName === Module.EMPLOYER
+        (rhm) => rhm.moduleName === Module.EMPLOYER,
       );
 
     const roleHasModuleHasComponent =
       userRoleHasModule?.userRoleHasModuleHasComponents.find(
-        (rhmhc) => rhmhc.componentName === Component.EMPLOYER
+        (rhmhc) => rhmhc.componentName === Component.EMPLOYER,
       );
 
     const elements =
       roleHasModuleHasComponent?.userRoleHasModuleHasComponentHasElements.map(
-        (el) => el.elementName
+        (el) => el.elementName,
       );
 
     if (this.visibilityId) {

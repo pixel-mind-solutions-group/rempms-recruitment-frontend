@@ -24,7 +24,7 @@ const routes: Routes = [
         path: 'dashboard',
         loadChildren: () =>
           import('./views/dashboard/dashboard.module').then(
-            (m) => m.DashboardModule
+            (m) => m.DashboardModule,
           ),
         canActivate: [AuthGuard],
       },
@@ -32,7 +32,7 @@ const routes: Routes = [
         path: 'employer',
         loadChildren: () =>
           import('./views/employer/employer.module').then(
-            (m) => m.EmployerModule
+            (m) => m.EmployerModule,
           ),
         canActivate: [AuthGuard],
       },
@@ -40,7 +40,7 @@ const routes: Routes = [
         path: 'job-position',
         loadChildren: () =>
           import('./views/job-position/job-position.module').then(
-            (m) => m.JobPositionModule
+            (m) => m.JobPositionModule,
           ),
         canActivate: [AuthGuard],
       },
@@ -48,7 +48,7 @@ const routes: Routes = [
         path: 'job-vacancy',
         loadChildren: () =>
           import('./views/job-vacancy/job-vacancy.module').then(
-            (m) => m.JobVacancyModule
+            (m) => m.JobVacancyModule,
           ),
         canActivate: [AuthGuard],
       },
@@ -56,7 +56,7 @@ const routes: Routes = [
         path: 'received-cvs',
         loadChildren: () =>
           import('./views/recieved-cvs/recieved-cvs.module').then(
-            (m) => m.RecievedCvsModule
+            (m) => m.RecievedCvsModule,
           ),
         canActivate: [AuthGuard],
       },

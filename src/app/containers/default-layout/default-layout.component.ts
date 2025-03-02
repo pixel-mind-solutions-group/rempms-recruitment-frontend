@@ -28,7 +28,7 @@ export class DefaultLayoutComponent implements OnInit {
       this.navItems = navItems
         .filter((nav) => {
           return parsedSessionUserData.userHasApplicationScopeHasUserRole.userRole.userRoleHasModules.find(
-            (module) => module.moduleName === nav.variant
+            (module) => module.moduleName === nav.variant,
           );
         })
         .map((nav) => nav);

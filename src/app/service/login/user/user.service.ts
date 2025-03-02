@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, catchError, throwError } from 'rxjs';
-import { CommonResponse } from 'src/app/model/commonResponse/CommonResponse';
-import { environment } from 'src/environments/environment';
+import { CommonResponse } from '../../../model/commonResponse/CommonResponse';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -19,13 +19,13 @@ export class UserService {
     };
 
     console.info(
-      'Calling iam service to get user permissions list by token and uuid...'
+      'Calling iam service to get user permissions list by token and uuid...',
     );
     return this.http.post<CommonResponse>(userDetailsApi, data).pipe(
       map((response) => response),
       catchError((error) => {
         return this.handleError(error);
-      })
+      }),
     );
   }
 
