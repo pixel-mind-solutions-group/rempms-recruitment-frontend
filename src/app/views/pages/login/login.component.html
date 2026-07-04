@@ -1,10 +1,13 @@
 <div
-  class="fade show"
+  class="fade show d-flex flex-column align-items-center justify-content-center bg-light dark:bg-transparent"
   *ngIf="loading"
-  style="text-align: center; padding-top: calc(100vh / 2); height: 100vh"
+  style="height: 100vh; width: 100%; position: absolute; top: 0; left: 0; z-index: 1050; font-family: 'Segoe UI', sans-serif;"
 >
-  <i class="spinner-grow spinner-grow-sm"></i>
-  <span class="m-1">Loading...</span>
+  <div class="spinner-border text-primary mb-3" style="width: 3rem; height: 3rem;" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <h5 class="fw-semibold text-primary">PixelMind IT Solutions</h5>
+  <p class="text-muted">Authenticating, please wait...</p>
 </div>
 
 <div
